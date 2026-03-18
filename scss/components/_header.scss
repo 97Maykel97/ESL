@@ -38,9 +38,7 @@
 		margin: 40px 0 0;
 		width: 100%;
 		max-width: 740px;
-		height: 1px;
-		border: none;
-		background-color: $gold-color;
+		@include underline;
 	}
 
 	&__bottom {

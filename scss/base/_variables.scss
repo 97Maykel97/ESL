@@ -4,3 +4,9 @@ $light-grey: #fafafa;
 $dark-grey: #757c84;
 $black: #282830;
 $gold-color: #f3a917;
+
+@mixin underline {
+	height: 1px;
+	border: none;
+	background-color: $gold-color;
+}

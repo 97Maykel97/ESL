@@ -1,0 +1,280 @@
+@use '../base/variables' as *;
+
+.schedule {
+	margin-top: 142px;
+
+	&__title {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 1.41;
+		color: $white;
+	}
+
+	&__underline {
+		margin-top: 40px;
+		margin-bottom: 0;
+		@include underline;
+	}
+
+	&__tabs {
+		display: flex;
+		gap: 0;
+	}
+
+	&__tab {
+		margin: 0;
+		width: 152px;
+		padding: 15px 30px;
+		border: 1px solid $gold-color;
+		background-color: transparent;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.67;
+		letter-spacing: 0.01em;
+		color: $white;
+		cursor: pointer;
+
+		&--active {
+			background-color: $gold-color;
+		}
+	}
+
+	&__slider {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		gap: 35px;
+		overflow: hidden;
+		padding: 10px;
+
+		&-controls {
+			margin-top: 55px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 50px;
+		}
+
+		&-btn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 85px;
+			height: 85px;
+			padding: 0;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			border: 3px solid #f3a917;
+			border-radius: 100%;
+		}
+	}
+
+	&__slide-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+		overflow: hidden;
+		transition:
+			box-shadow 0.3s ease,
+			border 0.3s ease;
+		margin-top: 80px;
+		background-color: #292a2f;
+		width: 350px;
+		min-height: 341px;
+		cursor: pointer;
+		border-radius: 10px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: rgba(0, 0, 0, 0);
+			transition: background-color 0.3s ease;
+		}
+
+		&:hover {
+			border: none;
+			box-shadow: 0 0 12px rgba(243, 169, 23, 0.5);
+		}
+
+		&:hover::before {
+			background-color: rgba(0, 0, 0, 0.35);
+		}
+
+		&--live:hover .schedule__watch-live {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+
+	&__watch-live {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		display: inline-flex;
+		align-items: center;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		pointer-events: none;
+		text-decoration: none;
+	}
+
+	&__watch-live-icon {
+		width: 14px;
+		height: 14px;
+		display: block;
+		flex-shrink: 0;
+		margin-right: 10px;
+	}
+
+	&__watch-live-text {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.43;
+		letter-spacing: 0.01em;
+		color: $white;
+	}
+
+	&__slide {
+		display: flex;
+
+		&-content {
+			padding: 30px 31px 41px;
+		}
+
+		&-information,
+		&-footer {
+			position: relative;
+			z-index: 1;
+		}
+
+		&-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&-tournament {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 1.43;
+			letter-spacing: 0.01em;
+			color: $white;
+		}
+
+		&-datetime {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&-date {
+			margin: 0;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 1.67;
+			letter-spacing: 0.01em;
+			color: $white;
+		}
+
+		&-time {
+			margin: 0;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 1;
+			letter-spacing: 0.01em;
+			color: $white;
+		}
+
+		&-line {
+			margin-top: 19px;
+			height: 1px;
+			border: none;
+			background-color: $gold-color;
+		}
+
+		&-team {
+			margin-top: 30px;
+
+			&-logos {
+				margin-top: 36px;
+				display: flex;
+				gap: 20px;
+			}
+
+			&-logo {
+				width: 50px;
+				height: 50px;
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				margin-top: 15px;
+			}
+
+			&-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			&-name {
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 1.75;
+				color: $white;
+				max-width: 184px;
+				margin: 0;
+			}
+
+			&-odds {
+				font-weight: 700;
+				font-size: 14px;
+				line-height: 1.43;
+				letter-spacing: 0.02em;
+				color: $white;
+				border: 1px solid #f3a917;
+				padding: 5px 10px;
+				width: 58px;
+				text-align: center;
+			}
+		}
+
+		&-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 15px;
+		}
+
+		&-status {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 1.67;
+			letter-spacing: 0.01em;
+			color: $dark-grey;
+		}
+	}
+}
+
+.schedule__dots {
+	display: flex;
+	gap: 18px;
+	align-items: center;
+
+	.dot {
+		background-color: #292a2f;
+		width: 15px;
+		height: 15px;
+		border-radius: 100%;
+
+		&-active {
+			background-color: $gold-color;
+		}
+	}
+}
