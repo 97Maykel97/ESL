@@ -8,7 +8,7 @@
 		<title>ESL Pro League CSGO</title>
 	</head>
 	<body>
-		<section class="header">
+		<section class="header hidden">
 			<div class="container">
 				<div class="header__top">
 					<nav class="header__nav">
@@ -75,342 +75,605 @@
 				<h2 class="schedule__title">Расписание и результаты</h2>
 				<hr class="schedule__underline" />
 				<div class="schedule__tabs">
-					<button class="schedule__tab schedule__tab--active">Matches</button>
-					<button class="schedule__tab">Battles</button>
+					<button
+						class="schedule__tab schedule__tab--active"
+						type="button"
+						data-tab="matches"
+					>
+						Matches
+					</button>
+
+					<button class="schedule__tab" type="button" data-tab="battles">
+						Battles
+					</button>
 				</div>
 
-				<div class="schedule__slider">
-					<div class="schedule__slide schedule__slide--1">
-						<div class="schedule__slide-content schedule__slide-content--live">
-							<a href="#" class="schedule__watch-live">
-								<img
-									src="img/live-icon.svg"
-									alt="Watch live icon"
-									class="schedule__watch-live-icon"
-								/>
-								<span class="schedule__watch-live-text">WATCH LIVE</span>
-							</a>
+				<div
+					class="schedule__panel schedule__panel--matches schedule__panel--active"
+				>
+					<div class="schedule__slider">
+						<div class="schedule__slide schedule__slide--1">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
+							>
+								<a href="#" class="schedule__watch-live">
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
 
-							<div class="schedule__slide-information">
-								<div class="schedule__slide-header">
-									<p class="schedule__slide-tournament">Asia Minor: Play-Off</p>
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">
+											Asia Minor: Play-Off
+										</p>
 
-									<div class="schedule__slide-datetime">
-										<p class="schedule__slide-date">29 Oct</p>
-										<p class="schedule__slide-time">19:00</p>
+										<div class="schedule__slide-datetime">
+											<p class="schedule__slide-date">29 Oct</p>
+											<p class="schedule__slide-time">19:00</p>
+										</div>
+									</div>
+
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-teams">
+										<div class="schedule__slide-team-logos">
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/JennyBell.png"
+												alt="Jenny Bell"
+											/>
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/ArleneRobertson.png"
+												alt="Arlene Robertson"
+											/>
+										</div>
+
+										<div class="schedule__slide-team-info">
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Regina Watson</p>
+												<p class="schedule__slide-team-odds">3.22</p>
+											</div>
+
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">
+													Arlene Robertson
+												</p>
+												<p class="schedule__slide-team-odds">53.22</p>
+											</div>
+										</div>
 									</div>
 								</div>
 
-								<hr class="schedule__slide-line" />
-
-								<div class="schedule__slide-teams">
-									<div class="schedule__slide-team-logos">
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/JennyBell.png"
-											alt="Jenny Bell"
-										/>
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/ArleneRobertson.png"
-											alt="Arlene Robertson"
-										/>
-									</div>
-
-									<div class="schedule__slide-team-info">
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Regina Watson</p>
-											<p class="schedule__slide-team-odds">3.22</p>
-										</div>
-
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Arlene Robertson</p>
-											<p class="schedule__slide-team-odds">53.22</p>
-										</div>
-									</div>
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">
+										Starts in: 5 hours 39 min • Bo 3
+									</p>
+									<img
+										class="schedule__slide-sponsor-logo"
+										src="img/sponsor-logo.png"
+										alt="GG.BET logo"
+									/>
 								</div>
 							</div>
+						</div>
 
-							<div class="schedule__slide-footer">
-								<p class="schedule__slide-status">
-									Starts in: 5 hours 39 min • Bo 3
-								</p>
-								<img
-									class="schedule__slide-sponsor-logo"
-									src="img/sponsor-logo.png"
-									alt="GG.BET logo"
-								/>
+						<div class="schedule__slide schedule__slide--2">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
+							>
+								<a
+									href="#"
+									class="schedule__watch-live"
+									rel="noreferrer noopener"
+								>
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
+
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">
+											Asia Minor: Play-Off
+										</p>
+
+										<div class="schedule__slide-datetime">
+											<p class="schedule__slide-date">29 Oct</p>
+											<p class="schedule__slide-time">19:00</p>
+										</div>
+									</div>
+
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-teams">
+										<div class="schedule__slide-team-logos">
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/ReginaWatson.png"
+												alt="Jenny Bell"
+											/>
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/KathrynJones.png"
+												alt="Kathryn Jones"
+											/>
+										</div>
+
+										<div class="schedule__slide-team-info">
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Regina Watson</p>
+												<p class="schedule__slide-team-odds">3.22</p>
+											</div>
+
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Kathryn Jones</p>
+												<p class="schedule__slide-team-odds">53.22</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">
+										Starts in: 5 hours 39 min • Bo 3
+									</p>
+									<img
+										class="schedule__slide-sponsor-logo"
+										src="img/sponsor-logo.png"
+										alt="GG.BET logo"
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="schedule__slide schedule__slide--3">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
+							>
+								<a
+									href="#"
+									class="schedule__watch-live"
+									rel="noreferrer noopener"
+								>
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">
+											Asia Minor: Play-Off
+										</p>
+
+										<div class="schedule__slide-datetime">
+											<p class="schedule__slide-date">29 Oct</p>
+											<p class="schedule__slide-time">19:00</p>
+										</div>
+									</div>
+
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-teams">
+										<div class="schedule__slide-team-logos">
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/RicardoHawkins.png"
+												alt="Jenny Bell"
+											/>
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/BruceSimmons.png"
+												alt="Arlene Robertson"
+											/>
+										</div>
+
+										<div class="schedule__slide-team-info">
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Ricardo Hawkins</p>
+												<p class="schedule__slide-team-odds">3.22</p>
+											</div>
+
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Bruce Simmons</p>
+												<p class="schedule__slide-team-odds">53.22</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">
+										Starts in: 5 hours 39 min • Bo 3
+									</p>
+									<img
+										class="schedule__slide-sponsor-logo"
+										src="img/sponsor-logo.png"
+										alt="GG.BET logo"
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="schedule__slide schedule__slide--4">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
+							>
+								<a
+									href="#"
+									class="schedule__watch-live"
+									rel="noreferrer noopener"
+								>
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
+
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">
+											Asia Minor: Play-Off
+										</p>
+
+										<div class="schedule__slide-datetime">
+											<p class="schedule__slide-date">29 Oct</p>
+											<p class="schedule__slide-time">19:00</p>
+										</div>
+									</div>
+
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-teams">
+										<div class="schedule__slide-team-logos">
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/JennyBell.png"
+												alt="Jenny Bell"
+											/>
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/ArleneRobertson.png"
+												alt="Arlene Robertson"
+											/>
+										</div>
+
+										<div class="schedule__slide-team-info">
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Regina Watson</p>
+												<p class="schedule__slide-team-odds">3.22</p>
+											</div>
+
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">
+													Arlene Robertson
+												</p>
+												<p class="schedule__slide-team-odds">53.22</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">
+										Starts in: 5 hours 39 min • Bo 3
+									</p>
+									<img
+										class="schedule__slide-sponsor-logo"
+										src="img/sponsor-logo.png"
+										alt="GG.BET logo"
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="schedule__slide schedule__slide--5">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
+							>
+								<a
+									href="#"
+									class="schedule__watch-live"
+									rel="noreferrer noopener"
+								>
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
+
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">
+											Asia Minor: Play-Off
+										</p>
+
+										<div class="schedule__slide-datetime">
+											<p class="schedule__slide-date">29 Oct</p>
+											<p class="schedule__slide-time">19:00</p>
+										</div>
+									</div>
+
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-teams">
+										<div class="schedule__slide-team-logos">
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/JennyBell.png"
+												alt="Jenny Bell"
+											/>
+											<img
+												class="schedule__slide-team-logo"
+												src="img/teams/ArleneRobertson.png"
+												alt="Arlene Robertson"
+											/>
+										</div>
+
+										<div class="schedule__slide-team-info">
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">Regina Watson</p>
+												<p class="schedule__slide-team-odds">3.22</p>
+											</div>
+
+											<div class="schedule__slide-team-row">
+												<p class="schedule__slide-team-name">
+													Arlene Robertson
+												</p>
+												<p class="schedule__slide-team-odds">53.22</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">
+										Starts in: 5 hours 39 min • Bo 3
+									</p>
+									<img
+										class="schedule__slide-sponsor-logo"
+										src="img/sponsor-logo.png"
+										alt="GG.BET logo"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="schedule__slide schedule__slide--2">
-						<div class="schedule__slide-content schedule__slide-content--live">
-							<a
-								href="#"
-								class="schedule__watch-live"
-								rel="noreferrer noopener"
+				<div class="schedule__panel schedule__panel--battles">
+					<div class="schedule__slider">
+						<div class="schedule__slide schedule__slide--battle">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
 							>
-								<img
-									src="img/live-icon.svg"
-									alt="Watch live icon"
-									class="schedule__watch-live-icon"
-								/>
-								<span class="schedule__watch-live-text">WATCH LIVE</span>
-							</a>
+								<a href="#" class="schedule__watch-live">
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
 
-							<div class="schedule__slide-information">
-								<div class="schedule__slide-header">
-									<p class="schedule__slide-tournament">Asia Minor: Play-Off</p>
-
-									<div class="schedule__slide-datetime">
-										<p class="schedule__slide-date">29 Oct</p>
-										<p class="schedule__slide-time">19:00</p>
-									</div>
-								</div>
-
-								<hr class="schedule__slide-line" />
-
-								<div class="schedule__slide-teams">
-									<div class="schedule__slide-team-logos">
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/ReginaWatson.png"
-											alt="Jenny Bell"
-										/>
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/KathrynJones.png"
-											alt="Kathryn Jones"
-										/>
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">Group Stage</p>
 									</div>
 
-									<div class="schedule__slide-team-info">
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Regina Watson</p>
-											<p class="schedule__slide-team-odds">3.22</p>
-										</div>
+									<hr class="schedule__slide-line" />
 
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Kathryn Jones</p>
-											<p class="schedule__slide-team-odds">53.22</p>
+									<div class="schedule__slide-battle-body">
+										<img
+											class="schedule__slide-battle-logo"
+											src="img/p.svg"
+											alt="Battles logo"
+										/>
+
+										<div class="schedule__slide-battle-content">
+											<div class="schedule__slide-battle-groups">
+												<p class="schedule__slide-team-name">Group A</p>
+												<p class="schedule__slide-team-name">Group B</p>
+											</div>
+
+											<p class="schedule__slide-team-odds">MATCH #1</p>
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="schedule__slide-footer">
-								<p class="schedule__slide-status">
-									Starts in: 5 hours 39 min • Bo 3
-								</p>
-								<img
-									class="schedule__slide-sponsor-logo"
-									src="img/sponsor-logo.png"
-									alt="GG.BET logo"
-								/>
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">Map: Erangel</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="schedule__slide schedule__slide--3">
-						<div class="schedule__slide-content schedule__slide-content--live">
-							<a
-								href="#"
-								class="schedule__watch-live"
-								rel="noreferrer noopener"
+						<div class="schedule__slide schedule__slide--battle">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
 							>
-								<img
-									src="img/live-icon.svg"
-									alt="Watch live icon"
-									class="schedule__watch-live-icon"
-								/>
-								<span class="schedule__watch-live-text">WATCH LIVE</span>
-							</a>
-							<div class="schedule__slide-information">
-								<div class="schedule__slide-header">
-									<p class="schedule__slide-tournament">Asia Minor: Play-Off</p>
+								<a href="#" class="schedule__watch-live">
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
 
-									<div class="schedule__slide-datetime">
-										<p class="schedule__slide-date">29 Oct</p>
-										<p class="schedule__slide-time">19:00</p>
-									</div>
-								</div>
-
-								<hr class="schedule__slide-line" />
-
-								<div class="schedule__slide-teams">
-									<div class="schedule__slide-team-logos">
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/RicardoHawkins.png"
-											alt="Jenny Bell"
-										/>
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/BruceSimmons.png"
-											alt="Arlene Robertson"
-										/>
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">Group Stage</p>
 									</div>
 
-									<div class="schedule__slide-team-info">
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Ricardo Hawkins</p>
-											<p class="schedule__slide-team-odds">3.22</p>
-										</div>
+									<hr class="schedule__slide-line" />
 
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Bruce Simmons</p>
-											<p class="schedule__slide-team-odds">53.22</p>
+									<div class="schedule__slide-battle-body">
+										<img
+											class="schedule__slide-battle-logo"
+											src="img/p.svg"
+											alt="Battles logo"
+										/>
+
+										<div class="schedule__slide-battle-content">
+											<div class="schedule__slide-battle-groups">
+												<p class="schedule__slide-team-name">Group A</p>
+												<p class="schedule__slide-team-name">Group B</p>
+											</div>
+
+											<p class="schedule__slide-team-odds">MATCH #2</p>
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="schedule__slide-footer">
-								<p class="schedule__slide-status">
-									Starts in: 5 hours 39 min • Bo 3
-								</p>
-								<img
-									class="schedule__slide-sponsor-logo"
-									src="img/sponsor-logo.png"
-									alt="GG.BET logo"
-								/>
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">Map: Erangel</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="schedule__slide schedule__slide--4">
-						<div class="schedule__slide-content schedule__slide-content--live">
-							<a
-								href="#"
-								class="schedule__watch-live"
-								rel="noreferrer noopener"
+						<div class="schedule__slide schedule__slide--battle">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
 							>
-								<img
-									src="img/live-icon.svg"
-									alt="Watch live icon"
-									class="schedule__watch-live-icon"
-								/>
-								<span class="schedule__watch-live-text">WATCH LIVE</span>
-							</a>
+								<a href="#" class="schedule__watch-live">
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
 
-							<div class="schedule__slide-information">
-								<div class="schedule__slide-header">
-									<p class="schedule__slide-tournament">Asia Minor: Play-Off</p>
-
-									<div class="schedule__slide-datetime">
-										<p class="schedule__slide-date">29 Oct</p>
-										<p class="schedule__slide-time">19:00</p>
-									</div>
-								</div>
-
-								<hr class="schedule__slide-line" />
-
-								<div class="schedule__slide-teams">
-									<div class="schedule__slide-team-logos">
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/JennyBell.png"
-											alt="Jenny Bell"
-										/>
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/ArleneRobertson.png"
-											alt="Arlene Robertson"
-										/>
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">Group Stage</p>
 									</div>
 
-									<div class="schedule__slide-team-info">
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Regina Watson</p>
-											<p class="schedule__slide-team-odds">3.22</p>
-										</div>
+									<hr class="schedule__slide-line" />
 
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Arlene Robertson</p>
-											<p class="schedule__slide-team-odds">53.22</p>
+									<div class="schedule__slide-battle-body">
+										<img
+											class="schedule__slide-battle-logo"
+											src="img/p.svg"
+											alt="Battles logo"
+										/>
+
+										<div class="schedule__slide-battle-content">
+											<div class="schedule__slide-battle-groups">
+												<p class="schedule__slide-team-name">Group A</p>
+												<p class="schedule__slide-team-name">Group B</p>
+											</div>
+
+											<p class="schedule__slide-team-odds">MATCH #3</p>
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="schedule__slide-footer">
-								<p class="schedule__slide-status">
-									Starts in: 5 hours 39 min • Bo 3
-								</p>
-								<img
-									class="schedule__slide-sponsor-logo"
-									src="img/sponsor-logo.png"
-									alt="GG.BET logo"
-								/>
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">Map: Erangel</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="schedule__slide schedule__slide--5">
-						<div class="schedule__slide-content schedule__slide-content--live">
-							<a
-								href="#"
-								class="schedule__watch-live"
-								rel="noreferrer noopener"
+						<div class="schedule__slide schedule__slide--battle">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
 							>
-								<img
-									src="img/live-icon.svg"
-									alt="Watch live icon"
-									class="schedule__watch-live-icon"
-								/>
-								<span class="schedule__watch-live-text">WATCH LIVE</span>
-							</a>
+								<a href="#" class="schedule__watch-live">
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
 
-							<div class="schedule__slide-information">
-								<div class="schedule__slide-header">
-									<p class="schedule__slide-tournament">Asia Minor: Play-Off</p>
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">Group Stage</p>
+									</div>
 
-									<div class="schedule__slide-datetime">
-										<p class="schedule__slide-date">29 Oct</p>
-										<p class="schedule__slide-time">19:00</p>
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-battle-body">
+										<img
+											class="schedule__slide-battle-logo"
+											src="img/p.svg"
+											alt="Battles logo"
+										/>
+
+										<div class="schedule__slide-battle-content">
+											<div class="schedule__slide-battle-groups">
+												<p class="schedule__slide-team-name">Group A</p>
+												<p class="schedule__slide-team-name">Group B</p>
+											</div>
+
+											<p class="schedule__slide-team-odds">MATCH #4</p>
+										</div>
 									</div>
 								</div>
 
-								<hr class="schedule__slide-line" />
-
-								<div class="schedule__slide-teams">
-									<div class="schedule__slide-team-logos">
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/JennyBell.png"
-											alt="Jenny Bell"
-										/>
-										<img
-											class="schedule__slide-team-logo"
-											src="img/teams/ArleneRobertson.png"
-											alt="Arlene Robertson"
-										/>
-									</div>
-
-									<div class="schedule__slide-team-info">
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Regina Watson</p>
-											<p class="schedule__slide-team-odds">3.22</p>
-										</div>
-
-										<div class="schedule__slide-team-row">
-											<p class="schedule__slide-team-name">Arlene Robertson</p>
-											<p class="schedule__slide-team-odds">53.22</p>
-										</div>
-									</div>
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">Map: Erangel</p>
 								</div>
 							</div>
+						</div>
 
-							<div class="schedule__slide-footer">
-								<p class="schedule__slide-status">
-									Starts in: 5 hours 39 min • Bo 3
-								</p>
-								<img
-									class="schedule__slide-sponsor-logo"
-									src="img/sponsor-logo.png"
-									alt="GG.BET logo"
-								/>
+						<div class="schedule__slide schedule__slide--battle">
+							<div
+								class="schedule__slide-content schedule__slide-content--live"
+							>
+								<a href="#" class="schedule__watch-live">
+									<img
+										src="img/live-icon.svg"
+										alt="Watch live icon"
+										class="schedule__watch-live-icon"
+									/>
+									<span class="schedule__watch-live-text">WATCH LIVE</span>
+								</a>
+
+								<div class="schedule__slide-information">
+									<div class="schedule__slide-header">
+										<p class="schedule__slide-tournament">Group Stage</p>
+									</div>
+
+									<hr class="schedule__slide-line" />
+
+									<div class="schedule__slide-battle-body">
+										<img
+											class="schedule__slide-battle-logo"
+											src="img/p.svg"
+											alt="Battles logo"
+										/>
+
+										<div class="schedule__slide-battle-content">
+											<div class="schedule__slide-battle-groups">
+												<p class="schedule__slide-team-name">Group A</p>
+												<p class="schedule__slide-team-name">Group B</p>
+											</div>
+
+											<p class="schedule__slide-team-odds">MATCH #5</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="schedule__slide-footer">
+									<p class="schedule__slide-status">Map: Erangel</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -434,5 +697,5 @@
 			</div>
 		</section>
 	</body>
-	<script src="js/main.js"></script>
+	<script type="module" src="js/main.js"></script>
 </html>

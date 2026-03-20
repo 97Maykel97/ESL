@@ -41,11 +41,11 @@
 
 	&__slider {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		align-items: stretch;
 		gap: 35px;
-		overflow: hidden;
 		padding: 10px;
+		transition: transform 0.3s ease;
 
 		&-controls {
 			margin-top: 55px;
@@ -67,82 +67,67 @@
 			cursor: pointer;
 			border: 3px solid #f3a917;
 			border-radius: 100%;
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: default;
+			}
 		}
 	}
 
-	&__slide-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		position: relative;
+	&__panel {
+		display: none;
 		overflow: hidden;
-		transition:
-			box-shadow 0.3s ease,
-			border 0.3s ease;
-		margin-top: 80px;
-		background-color: #292a2f;
-		width: 350px;
-		min-height: 341px;
-		cursor: pointer;
-		border-radius: 10px;
+		touch-action: pan-y;
 
-		&::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-color: rgba(0, 0, 0, 0);
-			transition: background-color 0.3s ease;
+		&--active {
+			display: block;
 		}
-
-		&:hover {
-			border: none;
-			box-shadow: 0 0 12px rgba(243, 169, 23, 0.5);
-		}
-
-		&:hover::before {
-			background-color: rgba(0, 0, 0, 0.35);
-		}
-
-		&--live:hover .schedule__watch-live {
-			opacity: 1;
-			pointer-events: auto;
-		}
-	}
-
-	&__watch-live {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: 3;
-		display: inline-flex;
-		align-items: center;
-		transform: translate(-50%, -50%);
-		opacity: 0;
-		pointer-events: none;
-		text-decoration: none;
-	}
-
-	&__watch-live-icon {
-		width: 14px;
-		height: 14px;
-		display: block;
-		flex-shrink: 0;
-		margin-right: 10px;
-	}
-
-	&__watch-live-text {
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 1.43;
-		letter-spacing: 0.01em;
-		color: $white;
 	}
 
 	&__slide {
 		display: flex;
+		flex: 0 0 auto;
+		width: 350px;
 
 		&-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			position: relative;
+			overflow: hidden;
+			transition:
+				box-shadow 0.3s ease,
+				border 0.3s ease;
+			margin-top: 80px;
+			background-color: #292a2f;
+			width: 350px;
+			min-height: 341px;
+			cursor: pointer;
+			border-radius: 10px;
 			padding: 30px 31px 41px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background-color: rgba(0, 0, 0, 0);
+				transition: background-color 0.3s ease;
+			}
+
+			&:hover {
+				border: none;
+				box-shadow: 0 0 12px rgba(243, 169, 23, 0.5);
+			}
+
+			&:hover::before {
+				background-color: rgba(0, 0, 0, 0.35);
+			}
+
+			&--live:hover .schedule__watch-live {
+				opacity: 1;
+				pointer-events: auto;
+			}
 		}
 
 		&-information,
@@ -194,6 +179,8 @@
 			height: 1px;
 			border: none;
 			background-color: $gold-color;
+			position: relative;
+			z-index: 1;
 		}
 
 		&-team {
@@ -245,6 +232,36 @@
 			}
 		}
 
+		&-battle-logo {
+			margin-top: 32px;
+		}
+
+		&-battle-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 36px;
+
+			.schedule__slide-team-odds {
+				padding: 5px 10px;
+				width: 102px;
+				height: 30px;
+				font-size: 14px;
+			}
+
+			.schedule__slide-footer {
+				margin-top: 10px;
+			}
+
+			.schedule__slide-status {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 167%;
+				letter-spacing: 0.01em;
+				color: #c4c4c5;
+			}
+		}
+
 		&-footer {
 			display: flex;
 			justify-content: space-between;
@@ -259,22 +276,84 @@
 			letter-spacing: 0.01em;
 			color: $dark-grey;
 		}
+
+		&--battle {
+			.schedule__slide-content {
+				height: 341px;
+			}
+
+			.schedule__slide-footer {
+				margin-top: auto;
+			}
+
+			.schedule__slide-team-odds {
+				margin-bottom: 10px;
+			}
+
+			.schedule__slide-status {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&__watch-live {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 166px;
+		height: 40px;
+		padding: 10px 20px;
+		box-sizing: border-box;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		pointer-events: none;
+		text-decoration: none;
+		background-color: $gold-color;
+	}
+
+	&__watch-live-icon {
+		width: 14px;
+		height: 14px;
+		display: block;
+		flex-shrink: 0;
+		margin-right: 10px;
+	}
+
+	&__watch-live-text {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.43;
+		letter-spacing: 0.01em;
+		color: $white;
+	}
+
+	&__dots {
+		display: flex;
+		gap: 18px;
+		align-items: center;
+
+		.dot {
+			background-color: #292a2f;
+			width: 15px;
+			height: 15px;
+			padding: 0;
+			border: none;
+			border-radius: 100%;
+			cursor: pointer;
+
+			&-active {
+				background-color: $gold-color;
+			}
+		}
 	}
 }
 
-.schedule__dots {
-	display: flex;
-	gap: 18px;
-	align-items: center;
-
-	.dot {
-		background-color: #292a2f;
-		width: 15px;
-		height: 15px;
-		border-radius: 100%;
-
-		&-active {
-			background-color: $gold-color;
-		}
+@media screen and (max-width: 991px) {
+	.schedule__slider-controls {
+		display: none;
 	}
 }

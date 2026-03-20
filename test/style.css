@@ -1,0 +1,250 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+	font-weight: 700;
+}
+
+:root {
+	--bg: #05020d;
+	--card: #5a5d67;
+	--card-live: #2b2a28;
+	--text: #ffffff;
+	--muted: #9a9ea6;
+	--gold: #f3a917;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	background: var(--bg);
+	color: var(--text);
+}
+
+.container {
+	max-width: 1340px;
+	margin: 0 auto;
+	padding: 80px 20px;
+}
+
+.schedule-demo__title {
+	margin: 0 0 36px;
+	font-size: 32px;
+	line-height: 1.41;
+}
+
+.schedule-demo__line {
+	height: 1px;
+	margin: 0 0 0;
+	border: none;
+	background: var(--gold);
+}
+
+.schedule-demo__tabs {
+	display: flex;
+	margin: 0 0 70px;
+}
+
+.schedule-demo__tab {
+	width: 116px;
+	height: 48px;
+	border: 1px solid var(--gold);
+	background: transparent;
+	color: var(--text);
+	font:
+		700 18px/1 'Montserrat',
+		sans-serif;
+	cursor: pointer;
+}
+
+.schedule-demo__tab--active {
+	background: var(--gold);
+	color: #05020d;
+}
+
+.schedule-demo__panel {
+	display: none;
+}
+
+.schedule-demo__panel--active {
+	display: block;
+}
+
+.schedule-demo__slider {
+	display: flex;
+	gap: 28px;
+	flex-wrap: wrap;
+}
+
+.schedule-demo__card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	min-height: 322px;
+	padding: 22px 24px 26px;
+	border-radius: 12px;
+	background: var(--card);
+	overflow: hidden;
+}
+
+.schedule-demo__card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(7, 7, 7, 0);
+	transition: background 0.25s ease;
+}
+
+.schedule-demo__card--live {
+	background: var(--card-live);
+	box-shadow: 0 0 16px rgba(243, 169, 23, 0.55);
+}
+
+.schedule-demo__card:hover::before {
+	background: rgba(7, 7, 7, 0.76);
+}
+
+.schedule-demo__watch-live {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 166px;
+	height: 40px;
+	padding: 10px 20px;
+	background: var(--gold);
+	color: var(--text);
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 1.43;
+	letter-spacing: 0.01em;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.schedule-demo__card:hover .schedule-demo__watch-live {
+	opacity: 1;
+}
+
+.schedule-demo__card-top,
+.schedule-demo__rows,
+.schedule-demo__footer,
+.schedule-demo__battle-logo {
+	position: relative;
+	z-index: 1;
+}
+
+.schedule-demo__card-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.schedule-demo__meta,
+.schedule-demo__date,
+.schedule-demo__status {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.43;
+}
+
+.schedule-demo__datetime {
+	text-align: center;
+}
+
+.schedule-demo__time {
+	margin: 4px 0 0;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.schedule-demo__card-line {
+	width: 100%;
+	height: 1px;
+	margin: 18px 0 28px;
+	border: none;
+	background: var(--gold);
+}
+
+.schedule-demo__logos {
+	display: flex;
+	gap: 18px;
+	margin-bottom: 18px;
+}
+
+.schedule-demo__logos img {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+}
+
+.schedule-demo__rows {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.schedule-demo__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.schedule-demo__name {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.schedule-demo__badge {
+	margin: 0;
+	padding: 6px 10px;
+	border: 1px solid var(--gold);
+	font-size: 12px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.schedule-demo__footer {
+	margin-top: auto;
+	padding-top: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.schedule-demo__footer img {
+	max-width: 46px;
+}
+
+.schedule-demo__status {
+	color: var(--muted);
+}
+
+.schedule-demo__battle-logo {
+	margin-bottom: 22px;
+	color: var(--gold);
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.schedule-demo__rows--battle {
+	margin-top: 8px;
+}
