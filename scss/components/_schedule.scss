@@ -2,6 +2,7 @@
 
 .schedule {
 	margin-top: 142px;
+	padding-bottom: 152px;
 
 	&__title {
 		font-weight: 700;
@@ -117,7 +118,9 @@
 
 			&:hover {
 				border: none;
-				box-shadow: 0 0 12px rgba(243, 169, 23, 0.5);
+				box-shadow:
+					0 0 12px rgba(243, 170, 23, 0.796),
+					0 0 24px rgba(243, 170, 23, 0.796);
 			}
 
 			&:hover::before {
@@ -353,6 +356,10 @@
 }
 
 @media screen and (max-width: 991px) {
+	.schedule__slider {
+		transition: none;
+	}
+
 	.schedule__slider-controls {
 		display: none;
 	}

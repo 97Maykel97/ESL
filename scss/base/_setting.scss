@@ -1,7 +1,5 @@
 @use 'variables' as *;
 
-@use 'variables' as *;
-
 @font-face {
 	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
@@ -34,9 +32,17 @@
 	font-display: block;
 }
 
+html,
 body {
 	background-color: $main-color;
 	color: $white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
 	font-family: 'Montserrat', sans-serif;
 }
 .container {

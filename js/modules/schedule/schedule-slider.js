@@ -6,12 +6,16 @@ export function initScheduleSlider() {
 	const slideWidth = 350;
 	const gap = 28;
 	const swipeThreshold = 50;
+	const autoplayDelay = 4000;
+	const dotsContainer = document.querySelector('.schedule__dots');
+	const dots = document.querySelectorAll('.dot');
 
 	if (!btnRight || !btnLeft) return;
 
 	let currentSlide = 0;
 	let touchStartX = 0;
 	let touchEndX = 0;
+	let autoplayId = null;
 
 	function getActivePanel() {
 		return document.querySelector('.schedule__panel--active');
@@ -40,6 +44,23 @@ export function initScheduleSlider() {
 		return Math.min(slides.length, Math.max(1, visibleSlidesCount));
 	}
 
+	function activeDots(slide) {
+		dots.forEach(dot => {
+			dot.classList.remove('dot-active');
+		});
+
+		if (!dots.length) return;
+
+		const normalizedSlide = Math.min(slide, dots.length - 1);
+		const activeDot =
+			document.querySelector(`.dot[data-slide="${normalizedSlide}"]`) ||
+			dots[normalizedSlide];
+
+		if (activeDot) {
+			activeDot.classList.add('dot-active');
+		}
+	}
+
 	function goToSlide(slide) {
 		const slider = getSlider();
 		const slides = getSlides();
@@ -59,6 +80,7 @@ export function initScheduleSlider() {
 		});
 
 		slider.style.transform = `translateX(-${slide * (slideWidth + gap)}px)`;
+		activeDots(slide);
 	}
 
 	function nextSlide() {
@@ -87,6 +109,21 @@ export function initScheduleSlider() {
 		}
 
 		goToSlide(currentSlide);
+	}
+
+	function stopAutoplay() {
+		if (autoplayId) {
+			clearInterval(autoplayId);
+			autoplayId = null;
+		}
+	}
+
+	function startAutoplay() {
+		stopAutoplay();
+
+		autoplayId = setInterval(() => {
+			nextSlide();
+		}, autoplayDelay);
 	}
 
 	btnRight.addEventListener('click', nextSlide);
@@ -126,13 +163,27 @@ export function initScheduleSlider() {
 			currentSlide = 0;
 			setTimeout(() => {
 				goToSlide(0);
+				startAutoplay();
 			}, 0);
 		});
 	});
 
 	window.addEventListener('resize', () => {
 		goToSlide(currentSlide);
+		startAutoplay();
 	});
 
+	if (dotsContainer) {
+		dotsContainer.addEventListener('click', e => {
+			if (e.target.classList.contains('dot')) {
+				const slide = Number(e.target.dataset.slide);
+				currentSlide = slide;
+				goToSlide(currentSlide);
+				startAutoplay();
+			}
+		});
+	}
+
 	goToSlide(0);
+	startAutoplay();
 }

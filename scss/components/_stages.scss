@@ -1,0 +1,146 @@
+@use '../base/variables' as *;
+.stages {
+	padding-top: 115px;
+	padding-bottom: 111px;
+	background-color: $gold-color;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: 60px;
+		&-info {
+			display: flex;
+			text-align: center;
+			gap: 62px;
+		}
+	}
+	&__btn {
+		margin-top: 68px;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		text-align: center;
+		padding: 18px 52px;
+		background-color: white;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.56;
+		letter-spacing: 0.01em;
+		text-align: center;
+		color: #000;
+
+		&::before {
+			content: '';
+			width: 24px;
+			height: 24px;
+			background: url('../img/stage/check-circle.svg') center / contain
+				no-repeat;
+		}
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 1.09;
+		color: #000;
+	}
+	&__text {
+		margin-top: 20px;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 1.67;
+		letter-spacing: 0.01em;
+		color: #000;
+		width: 608px;
+		&-span {
+			color: white;
+		}
+	}
+	&__underline {
+		width: 76px;
+		height: 4px;
+		border: none;
+		background-color: $white;
+		align-self: center;
+		margin-top: 42px;
+	}
+	&__info {
+		&-title {
+			margin-top: 33px;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 1.56;
+			letter-spacing: 0.01em;
+			text-align: center;
+
+			color: #000;
+		}
+		&-text {
+			margin-top: 2px;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 1.56;
+			letter-spacing: 0.01em;
+			text-align: center;
+			color: #000;
+			width: 221px;
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (max-width: 2400px) {
+	.stages {
+		&__wrapper {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&__wrapper-info {
+			gap: 40px 32px;
+		}
+
+		&__text {
+			max-width: 608px;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.stages {
+		&__wrapper-info {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__left {
+			align-items: center;
+		}
+	}
+}
+@media screen and (max-width: 920px) {
+	.stages__text {
+		width: auto;
+	}
+	.stages__underline {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.stages__btn {
+		padding: 18px 20px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.stages__btn {
+		padding: 18px 15px;
+	}
+}

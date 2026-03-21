@@ -92,7 +92,7 @@
 					class="schedule__panel schedule__panel--matches schedule__panel--active"
 				>
 					<div class="schedule__slider">
-						<div class="schedule__slide schedule__slide--1">
+						<div class="schedule__slide">
 							<div
 								class="schedule__slide-content schedule__slide-content--live"
 							>
@@ -162,7 +162,7 @@
 							</div>
 						</div>
 
-						<div class="schedule__slide schedule__slide--2">
+						<div class="schedule__slide">
 							<div
 								class="schedule__slide-content schedule__slide-content--live"
 							>
@@ -234,7 +234,7 @@
 							</div>
 						</div>
 
-						<div class="schedule__slide schedule__slide--3">
+						<div class="schedule__slide">
 							<div
 								class="schedule__slide-content schedule__slide-content--live"
 							>
@@ -305,7 +305,7 @@
 							</div>
 						</div>
 
-						<div class="schedule__slide schedule__slide--4">
+						<div class="schedule__slide">
 							<div
 								class="schedule__slide-content schedule__slide-content--live"
 							>
@@ -379,7 +379,7 @@
 							</div>
 						</div>
 
-						<div class="schedule__slide schedule__slide--5">
+						<div class="schedule__slide">
 							<div
 								class="schedule__slide-content schedule__slide-content--live"
 							>
@@ -685,14 +685,66 @@
 					</button>
 
 					<div class="schedule__dots">
-						<div class="dot dot-active"></div>
-						<div class="dot"></div>
-						<div class="dot"></div>
+						<div class="dot dot-active" data-slide="0"></div>
+						<div class="dot" data-slide="1"></div>
+						<div class="dot" data-slide="2"></div>
 					</div>
 
 					<button class="schedule__slider-btn schedule__slider-btn--right">
 						<img src="img/btn-right.svg" alt="Previous slide" />
 					</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="stages">
+			<div class="container">
+				<div class="stages__wrapper">
+					<div class="stages__right">
+						<h2 class="stages__title">Этапы проведения</h2>
+						<p class="stages__text">
+							The path to every Major begins with the open qualifiers for the
+							regional Minor Championships, spanning Europe, CIS, Americas, and
+							Asia. <span class="stages__text-span">Here is</span> the schedule
+							of every qualifying stage of StarLadder Major.
+						</p>
+					</div>
+					<div class="stages__left">
+						<div class="stages__wrapper-info">
+							<div class="stages__info">
+								<img
+									src="img/stage/stage-trophy.svg"
+									alt="Trophy icon"
+									class="stages__info-img"
+								/>
+								<h3 class="stages__info-title">Registration</h3>
+								<p class="stages__info-text">29 sep, 19:00 – 20 nov, 10:00</p>
+							</div>
+							<hr class="stages__underline" />
+							<div class="stages__info">
+								<img
+									src="img/stage/stage-check-shield.svg"
+									alt="Check-in icon"
+									class="stages__info-img"
+								/>
+								<h3 class="stages__info-title">Check-in</h3>
+								<p class="stages__info-text">29 sep, 19:00 – 20 nov, 10:00</p>
+							</div>
+							<hr class="stages__underline" />
+							<div class="stages__info">
+								<img
+									src="img/stage/stage-calendar.svg"
+									alt="Calendar icon"
+									class="stages__info-img"
+								/>
+								<h3 class="stages__info-title">Scheduling:</h3>
+								<p class="stages__info-text">29 sep, 19:00 – 20 nov, 10:00</p>
+							</div>
+						</div>
+						<button type="button" class="stages__btn" disabled>
+							Вы зарегистрированы
+						</button>
+					</div>
 				</div>
 			</div>
 		</section>
