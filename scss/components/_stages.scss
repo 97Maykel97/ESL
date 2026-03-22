@@ -6,11 +6,11 @@
 	&__wrapper {
 		display: flex;
 		align-items: center;
-		gap: 60px;
+		gap: 132px;
 		&-info {
 			display: flex;
 			text-align: center;
-			gap: 62px;
+			gap: 58.5px;
 		}
 	}
 	&__btn {
@@ -60,15 +60,22 @@
 			color: white;
 		}
 	}
-	&__underline {
-		width: 76px;
-		height: 4px;
-		border: none;
-		background-color: $white;
-		align-self: center;
-		margin-top: 42px;
-	}
+
 	&__info {
+		position: relative;
+
+		&:not(:last-child) {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: -62px;
+				width: 76px;
+				height: 4px;
+				background-color: $white;
+			}
+		}
 		&-title {
 			margin-top: 33px;
 			font-weight: 700;
@@ -93,7 +100,7 @@
 	}
 }
 
-@media screen and (max-width: 2400px) {
+@media screen and (max-width: 1440px) {
 	.stages {
 		&__wrapper {
 			flex-direction: column;
@@ -112,24 +119,37 @@
 	}
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 920px) {
 	.stages {
-		&__wrapper-info {
+		&__wrapper {
 			display: flex;
 			flex-direction: column;
-		}
-
-		&__left {
-			align-items: center;
+			&-info {
+				display: flex;
+				flex-direction: column;
+			}
 		}
 	}
 }
 @media screen and (max-width: 920px) {
-	.stages__text {
-		width: auto;
-	}
-	.stages__underline {
-		width: 100%;
+	.stages {
+		&__wrapper {
+			gap: 100px;
+		}
+		&__text {
+			width: auto;
+		}
+		&__info {
+			margin-bottom: 40px;
+			&:not(:last-child)::before {
+				top: calc(100% + 40px);
+				right: auto;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				height: 4px;
+			}
+		}
 	}
 }
 
@@ -140,6 +160,14 @@
 }
 
 @media screen and (max-width: 375px) {
+	.stages {
+		&__text {
+			text-align: center;
+		}
+		&__title {
+			font-size: 28px;
+		}
+	}
 	.stages__btn {
 		padding: 18px 15px;
 	}
