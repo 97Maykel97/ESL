@@ -63,6 +63,11 @@
 
 	&__info {
 		position: relative;
+		&:first-child {
+			.stages__info-title {
+				font-weight: 700;
+			}
+		}
 
 		&:not(:last-child) {
 			&::before {
@@ -78,7 +83,7 @@
 		}
 		&-title {
 			margin-top: 33px;
-			font-weight: 700;
+			font-weight: 500;
 			font-size: 16px;
 			line-height: 1.56;
 			letter-spacing: 0.01em;
